@@ -59,7 +59,7 @@ public class PhoneVerifyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_phone_verify);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        firebaseDatabase = FirebaseDatabase.getInstance("https://myapplication2-c301f.firebaseio.com");
+        firebaseDatabase = FirebaseDatabase.getInstance();
 
         autoVerify = findViewById(R.id.autoVerify);
         phoneNumber = findViewById(R.id.tenantPhoneNumber);
