@@ -36,7 +36,7 @@ public class HomePageActivity  extends AppCompatActivity {
     FirebaseUser firebaseUser;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-    String count;
+    String count ="0";
     Date date , date1;
     String datevalue;
 
@@ -66,7 +66,7 @@ public class HomePageActivity  extends AppCompatActivity {
         folk = intent.getStringExtra("folk");
         round = intent.getStringExtra("round");
 
-        databaseReference = firebaseDatabase.getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
         Log.e("value", databaseReference.toString());
 
         DetailClass detailClass = new DetailClass(name, contact, organisation, folk, round);
@@ -87,7 +87,7 @@ public class HomePageActivity  extends AppCompatActivity {
 
         daysLueftTextView.setText((TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS))+"");
 
-        databaseReference.child("Folks").child(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
+      /*  databaseReference.child("Folks").child(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 count = dataSnapshot.child("count").getValue(String.class);
@@ -100,7 +100,7 @@ public class HomePageActivity  extends AppCompatActivity {
 
             }
         });
-
+*/
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

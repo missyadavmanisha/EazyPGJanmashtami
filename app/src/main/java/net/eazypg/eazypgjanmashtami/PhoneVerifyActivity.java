@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
@@ -60,6 +61,7 @@ public class PhoneVerifyActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
 
         autoVerify = findViewById(R.id.autoVerify);
         phoneNumber = findViewById(R.id.tenantPhoneNumber);
@@ -153,6 +155,8 @@ public class PhoneVerifyActivity extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(InstanceIdResult instanceIdResult) {
                                     String refreshedToken = instanceIdResult.getToken();
+                                    databaseReference = firebaseDatabase.getReference("Folks" + firebaseAuth.getCurrentUser().getUid());
+                                    databaseReference.child("Token").child(refreshedToken).setValue(Build.MODEL);
 
 
                                 }
