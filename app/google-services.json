@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "466947469509-ks9ei6p84n77q06m7d55bh9uga5asvnp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.eazypg.eazypgjanmashtami",
+            "certificate_hash": "0227de5488f71e452a641455e10a0eb35bec59fb"
+          }
+        },
+        {
           "client_id": "466947469509-s0n8npvos0fkqslikhk28cv651g0m6n1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
